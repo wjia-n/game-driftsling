@@ -283,7 +283,7 @@ class _GameScreenState extends State<GameScreen>
                         child: CustomPaint(
                           size: s,
                           painter: _TrackPainter(
-                            engine: _e,
+                            e: _e,
                             theme: t,
                             carBody: CarStyles.bodies[
                                 _s.carStyle.clamp(0, CarStyles.bodies.length - 1)],

@@ -390,7 +390,7 @@ class DriftEngine extends ChangeNotifier {
       timeLeft -= dt;
       if (timeLeft <= 0) {
         timeLeft = 0;
-        _finish(won: false);
+        _finish(false);
         return;
       }
     }
@@ -511,7 +511,7 @@ class DriftEngine extends ChangeNotifier {
         lap++;
         score += 100;
         if (mode == DriftMode.trial && lap > _lapsToWin) {
-          _finish(won: true);
+          _finish(true);
           return;
         }
         popups.add(ScorePopup('LAP $lap!  +100', pos));
