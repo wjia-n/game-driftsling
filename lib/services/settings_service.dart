@@ -82,7 +82,7 @@ class DriftSettings extends ChangeNotifier {
   int difficulty = 0;
   String mode = 'trial';
   int circuit = 0;
-  bool isPro = false;
+  bool isPro = true; // everything unlocked — no Pro version
   int gamesPlayed = 0;
   int bestScore = 0; // best drift-attack/cruise score
   int bestCoins = 0; // most coins in one run
@@ -142,7 +142,7 @@ class DriftSettings extends ChangeNotifier {
     final m = p.getString(_kMode) ?? 'trial';
     mode = gameModes.contains(m) ? m : 'trial';
     circuit = (p.getInt(_kCircuit) ?? 0).clamp(0, 2);
-    isPro = p.getBool(_kIsPro) ?? false;
+    isPro = true; // everything unlocked
     gamesPlayed = p.getInt(_kGames) ?? 0;
     bestScore = p.getInt(_kBestScore) ?? 0;
     bestCoins = p.getInt(_kBestCoins) ?? 0;
