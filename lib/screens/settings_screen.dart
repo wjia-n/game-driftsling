@@ -6,6 +6,7 @@ import '../services/settings_service.dart';
 import '../theme/garage_themes.dart';
 import '../theme/toy_garage.dart';
 import 'pro_screen.dart';
+import '../transfer/transfer_ui.dart';
 
 /// Settings — Toy Garage edition, theme-aware.
 class SettingsScreen extends StatefulWidget {
@@ -92,6 +93,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+              TransferSaveTile(gameSlug: 'driftsling'),
                 _SectionTitle('Sound', t),
                 GarageRow(
                   theme: t,
