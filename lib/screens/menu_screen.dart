@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_review/in_app_review.dart';
@@ -263,7 +264,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       ),
                       alignment: Alignment.center,
                       child: Text(
-                        s.isPro ? '✦  PRO ACTIVE' : '✦  Get PRO',
+                        defaultTargetPlatform == TargetPlatform.iOS ? '⭐ Gold Star' : (s.isPro ? '✦  PRO ACTIVE' : '✦  Get PRO'),
                         style: Garage.label(17,
                             theme: t, color: t.ivory),
                       ),
