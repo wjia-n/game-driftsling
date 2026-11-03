@@ -455,9 +455,11 @@ class _MenuScreenState extends State<MenuScreen> {
                       ));
                     },
                     child: Text(
-                      s.isPro
+                      defaultTargetPlatform == TargetPlatform.iOS
                           ? '🎨  Open custom theme creator'
-                          : '🎨  Custom theme creator (PRO)',
+                          : (s.isPro
+                              ? '🎨  Open custom theme creator'
+                              : '🎨  Custom theme creator (PRO)'),
                       style: Garage.label(13, theme: t),
                     ),
                   ),
@@ -580,8 +582,9 @@ class _MenuScreenState extends State<MenuScreen> {
                     ],
                   ),
                   const SizedBox(height: 18),
-                  // Tip jar preview.
-                  Builder(builder: (_) {
+                  // Tip jar preview (Android only; iOS uses the Gold Star screen).
+                  if (defaultTargetPlatform != TargetPlatform.iOS)
+                    Builder(builder: (_) {
                     final tips = [
                       _store.coffeeProduct,
                       _store.chocolateProduct,
